@@ -2,6 +2,8 @@ package com.org.java.com.org.java.models;
 
 /**
  * Created by Bhargav on 1/22/2018.
+ *
+ * Pojo class for pre sale requests
  */
 public class PreSaleRequest {
 
@@ -12,7 +14,10 @@ public class PreSaleRequest {
     private int tickets;
     private String message;
 
-    /** Getters and Setters for PreSaleRequest class**/
+    /**
+     * Getters and Setters
+     * @return
+     */
     public String getMessage() {
         return message;
     }
@@ -61,5 +66,23 @@ public class PreSaleRequest {
         this.flag = flag;
     }
 
+    public String output(){
+
+        String output = null;
+
+        if(message==null){
+
+            output = name+" "+"Row"+rowSelected+" "+"Section"+ sectionSelected;
+
+        }
+        else{
+
+            output = name+" "+message;
+        }
+
+
+
+        return output;
+    }
 
 }

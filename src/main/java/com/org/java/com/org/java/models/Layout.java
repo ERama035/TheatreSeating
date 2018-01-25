@@ -4,6 +4,8 @@ import java.util.List;
 
 /**
  * Created by Bhargav on 1/22/2018.
+ *
+ * Pojo class for theatre layout
  */
 public class Layout {
 
@@ -13,7 +15,11 @@ public class Layout {
 
     private List<Section> sections;
 
-    /** Getters and Setters for Layout class**/
+    /**
+     * Getters and setters
+     * @return
+     */
+
     public int getTotalNumberOfSeats() { return totalNumberOfSeats; }
 
     public void setTotalNumberOfSeats(int totalNumberOfSeats) {
@@ -34,15 +40,6 @@ public class Layout {
 
     public void setSections(List<Section> sections) {
         this.sections = sections;
-    }
-
-    @Override
-    public String toString() {
-        return "Layout{" +
-                "totalNumberOfSeats=" + totalNumberOfSeats +
-                ", Availability=" + Availability +
-                ", sections=" + sections +
-                '}';
     }
 
 }

@@ -59,7 +59,7 @@ public class LayoutService {
         theatreLayout.setAvailability(theatreCapacity);
         theatreLayout.setSections(sectionList);
 
-        System.out.println("layout" + theatreLayout);
+
 
 
     }
