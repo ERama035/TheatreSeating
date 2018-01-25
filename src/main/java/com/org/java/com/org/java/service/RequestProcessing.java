@@ -1,4 +1,4 @@
-package com.org.java.com.org.java.Service;
+package com.org.java.com.org.java.service;
 
 import com.org.java.com.org.java.models.PreSaleRequest;
 
@@ -10,22 +10,29 @@ import java.util.List;
  */
 public class RequestProcessing {
 
+
     public static List<PreSaleRequest> requestList = new ArrayList<>();
 
+    // Method to store the requests in a list
     public void getPreSaleRequests(String requests) throws NumberFormatException{
 
         PreSaleRequest preSaleRequest = null;
 
-        String[] tempRequest = requests.split(System.lineSeparator());                                  //Splitting multiple requests and saving the pre-sale requests in an array
+        //Splitting multiple requests and saving the pre-sale requests in an array
+        String[] tempRequest = requests.split(System.lineSeparator());
 
         for(String requestEntry: tempRequest){
 
-            String[] requestArray = requestEntry.split(" ");                                    //Splitting the single request
+            //Splitting the single request
+            String[] requestArray = requestEntry.split(" ");
             preSaleRequest=new PreSaleRequest();
-            preSaleRequest.setName(requestArray[0]);                                                  //Saving the person's name
+
+            //Saving the person's name
+            preSaleRequest.setName(requestArray[0]);
 
             try{
-                preSaleRequest.setTickets(Integer.valueOf(requestArray[1]));                          //Saving the requested tickets
+                //Saving the requested tickets
+                preSaleRequest.setTickets(Integer.valueOf(requestArray[1]));
 
             }catch (NumberFormatException e){
 
@@ -33,6 +40,7 @@ public class RequestProcessing {
             }
             preSaleRequest.setFlag(false);
 
+            //Storing the request into a list
             requestList.add(preSaleRequest);
 
         }

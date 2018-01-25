@@ -1,12 +1,9 @@
 package com.org.java;
 
-import com.org.java.com.org.java.Service.AllotService;
-import com.org.java.com.org.java.Service.LayoutService;
-import com.org.java.com.org.java.Service.RequestProcessing;
-import com.org.java.com.org.java.models.PreSaleRequest;
-import com.org.java.com.org.java.models.Layout;
+import com.org.java.com.org.java.service.AllotService;
+import com.org.java.com.org.java.service.LayoutService;
+import com.org.java.com.org.java.service.RequestProcessing;
 
-import java.util.List;
 import java.util.Scanner;
 
 /**

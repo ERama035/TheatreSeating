@@ -9,32 +9,12 @@ public class Layout {
 
     private int totalNumberOfSeats;
 
-    @Override
-    public String toString() {
-        return "Layout{" +
-                "totalNumberOfSeats=" + totalNumberOfSeats +
-                ", Availability=" + Availability +
-                ", sections=" + sections +
-                '}';
-    }
-
     private int Availability;
-
-    public List<Section> getSections() {
-        return sections;
-    }
-
-    public void setSections(List<Section> sections) {
-        this.sections = sections;
-    }
 
     private List<Section> sections;
 
-
-    public int getTotalNumberOfSeats() {
-        return totalNumberOfSeats;
-
-    }
+    /** Getters and Setters for Layout class**/
+    public int getTotalNumberOfSeats() { return totalNumberOfSeats; }
 
     public void setTotalNumberOfSeats(int totalNumberOfSeats) {
         this.totalNumberOfSeats = totalNumberOfSeats;
@@ -46,6 +26,23 @@ public class Layout {
 
     public void setAvailability(int availability) {
         Availability = availability;
+    }
+
+    public List<Section> getSections() {
+        return sections;
+    }
+
+    public void setSections(List<Section> sections) {
+        this.sections = sections;
+    }
+
+    @Override
+    public String toString() {
+        return "Layout{" +
+                "totalNumberOfSeats=" + totalNumberOfSeats +
+                ", Availability=" + Availability +
+                ", sections=" + sections +
+                '}';
     }
 
 }

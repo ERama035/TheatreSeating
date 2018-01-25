@@ -1,20 +1,16 @@
-package com.org.java.com.org.java.Service;
+package com.org.java.com.org.java.service;
 
 import com.org.java.com.org.java.models.PreSaleRequest;
 import com.org.java.com.org.java.models.Section;
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
-import static com.org.java.com.org.java.Service.LayoutService.theatreLayout;
-import static com.org.java.com.org.java.Service.RequestProcessing.requestList;
+import static com.org.java.com.org.java.service.LayoutService.theatreLayout;
+import static com.org.java.com.org.java.service.RequestProcessing.requestList;
 
 /**
  * Created by Bhargav on 1/23/2018.
  */
 public class AllotService {
 
+    /** Method for allocating the seats**/
     public void allot() {
 
         for(PreSaleRequest preSaleRequest: requestList){
@@ -53,6 +49,7 @@ public class AllotService {
         preSaleRequest.setSectionSelected(section.getSectionNumber());
     }
 
+    /** Method for re-assigning seats**/
     private boolean isReAssign(PreSaleRequest preSaleRequest) {
 
         boolean result;

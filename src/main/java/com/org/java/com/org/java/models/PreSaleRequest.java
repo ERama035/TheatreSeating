@@ -12,6 +12,7 @@ public class PreSaleRequest {
     private int tickets;
     private String message;
 
+    /** Getters and Setters for PreSaleRequest class**/
     public String getMessage() {
         return message;
     }
