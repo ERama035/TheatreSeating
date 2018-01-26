@@ -17,7 +17,7 @@ public class Layout {
 
     /**
      * Getters and setters
-     * @return
+     *
      */
 
     public int getTotalNumberOfSeats() { return totalNumberOfSeats; }

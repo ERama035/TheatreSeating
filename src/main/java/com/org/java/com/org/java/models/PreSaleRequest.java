@@ -16,7 +16,7 @@ public class PreSaleRequest {
 
     /**
      * Getters and Setters
-     * @return
+     *
      */
     public String getMessage() {
         return message;
@@ -66,13 +66,17 @@ public class PreSaleRequest {
         this.flag = flag;
     }
 
+    /**
+     *Prints the output
+     * @return The String output
+     */
     public String output(){
 
         String output = null;
 
         if(message==null){
 
-            output = name+" "+"Row"+rowSelected+" "+"Section"+ sectionSelected;
+            output = name+" "+"Row "+rowSelected+" "+"Section "+ sectionSelected;
 
         }
         else{

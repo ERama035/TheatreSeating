@@ -10,7 +10,10 @@ public class Section{
     private int numberOfSeats;
     private int unoccupiedSeats;
 
-    //Getters and Setters for Section class
+    /**
+     *Getters and Setters for Section class
+     */
+
     public int getRowNumber() {
         return rowNumber;
     }
@@ -35,6 +38,14 @@ public class Section{
         this.numberOfSeats = numberOfSeats;
     }
 
+    public int getUnoccupiedSeats() {
+        return unoccupiedSeats;
+    }
+
+    public void setUnoccupiedSeats(int unoccupiedSeats) {
+        this.unoccupiedSeats = unoccupiedSeats;
+    }
+
     @Override
     public String toString() {
         return "Section{" +
@@ -45,12 +56,6 @@ public class Section{
                 '}';
     }
 
-    public int getUnoccupiedSeats() {
-        return unoccupiedSeats;
-    }
 
-    public void setUnoccupiedSeats(int unoccupiedSeats) {
-        this.unoccupiedSeats = unoccupiedSeats;
-    }
 
 }

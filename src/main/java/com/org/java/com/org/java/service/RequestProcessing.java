@@ -20,7 +20,8 @@ public class RequestProcessing {
 
         PreSaleRequest preSaleRequest = null;
 
-        /**Splitting multiple requests and saving the pre-sale requests in an array
+        /**
+         * Splitting multiple requests and saving the pre-sale requests in an array
          */
         String[] tempRequest = requests.split(System.lineSeparator());
 

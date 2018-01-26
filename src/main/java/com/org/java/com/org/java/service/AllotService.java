@@ -7,16 +7,20 @@ import static com.org.java.com.org.java.service.RequestProcessing.requestList;
 
 /**
  * Created by Bhargav on 1/23/2018.
+ *
+ * Service class for alloting the seats
  */
 public class AllotService {
 
-    // Method for allocating the seats
+    /**
+     *Method for allocating the seats
+     */
     public void allot() {
 
         for (PreSaleRequest preSaleRequest : requestList) {
             if(preSaleRequest.isFlag())continue;
             if(preSaleRequest.getTickets()>theatreLayout.getTotalNumberOfSeats()){
-                preSaleRequest.setMessage("can't handle request");
+                preSaleRequest.setMessage("Sorry, we can't handle your party.");
                 preSaleRequest.setFlag(true);
             }
             for (int i = 0; i < theatreLayout.getSections().size(); i++) {
@@ -48,7 +52,7 @@ public class AllotService {
             }
             if(!preSaleRequest.isFlag()){
 
-                preSaleRequest.setMessage("Split party");
+                preSaleRequest.setMessage("Call to split party.");
                 preSaleRequest.setFlag(true);
 
             }
@@ -57,6 +61,11 @@ public class AllotService {
         printRequests();
     }
 
+    /**
+     * Finds sections by availability
+     * @param tickets requested
+     * @return section number
+     */
     private int findSection(int tickets) {
         for(int i=0;i<theatreLayout.getSections().size();i++){
             Section section=theatreLayout.getSections().get(i);
@@ -67,6 +76,12 @@ public class AllotService {
         return -1;
     }
 
+    /**
+     * Finds the request which can be allocated in the section which is partially filled and be fully occupied
+     * @param quantity tickets required by complement request
+     * @param currentIndex current request number
+     * @return the request number
+     */
     private int findComplementRequest(int quantity, int currentIndex) {
         int requestNo = -1;
 
@@ -86,20 +101,35 @@ public class AllotService {
         return requestNo;
     }
 
+    /**
+     * Method for printing the output
+     */
     private void printRequests() {
 
-        System.out.println("Seats Distribution");
-            for(PreSaleRequest preSaleRequest: requestList){
+        System.out.println("Seats Distribution :\n");
+        for(PreSaleRequest preSaleRequest: requestList){
             System.out.println(preSaleRequest.output());
         }
     }
 
+    /**
+     * Method for allot seats for a request to a specific section
+     * @param preSaleRequest object
+     * @param section object
+     */
     private void allotSeats(PreSaleRequest preSaleRequest, Section section) {
         int unoccupied = section.getUnoccupiedSeats();
-        //deduct available seats in a section
+
+        /**
+         *deduct available seats in a section
+         */
         unoccupied -= preSaleRequest.getTickets();
-        //deduct total available seats
+
+        /**
+         *deduct total available seats
+         */
         int totalSeats = theatreLayout.getAvailability();
+
         totalSeats -= preSaleRequest.getTickets();
         theatreLayout.setAvailability(totalSeats);
         section.setUnoccupiedSeats(unoccupied);
