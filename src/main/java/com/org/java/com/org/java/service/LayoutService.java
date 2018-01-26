@@ -1,5 +1,6 @@
 package com.org.java.com.org.java.service;
 
+import com.org.java.com.org.java.errors.LayoutServiceException;
 import com.org.java.com.org.java.models.Layout;
 import com.org.java.com.org.java.models.Section;
 
@@ -19,7 +20,7 @@ public class LayoutService {
      *Method to store the theatre layout in list
      */
 
-    public void getLayout(String tempLayout) throws NumberFormatException{
+    public void getLayout(String tempLayout) throws LayoutServiceException {
 
         Section sectionInRows = null;
         List<Section> sectionList = new ArrayList<Section>();
@@ -43,6 +44,11 @@ public class LayoutService {
                 }catch(NumberFormatException e){
 
                     throw new NumberFormatException(sections[j]+" is invalid section capacity");
+                }
+
+                if((Integer.valueOf(sections[j]))<0){
+
+                    throw new LayoutServiceException("Entered negative value for section");
                 }
 
                 /**

@@ -17,10 +17,14 @@ public class AllotService {
      */
     public void allot() {
 
-        for (PreSaleRequest preSaleRequest : requestList) {
+         for (PreSaleRequest preSaleRequest : requestList) {
             if(preSaleRequest.isFlag())continue;
-            if(preSaleRequest.getTickets()>theatreLayout.getTotalNumberOfSeats()){
-                preSaleRequest.setMessage("Sorry, we can't handle your party.");
+
+             /**
+              * Checking
+              */
+             if(preSaleRequest.getTickets()>theatreLayout.getTotalNumberOfSeats()){
+                preSaleRequest.setMessage("Sorry, we can't handle your party");
                 preSaleRequest.setFlag(true);
             }
             for (int i = 0; i < theatreLayout.getSections().size(); i++) {
@@ -43,13 +47,16 @@ public class AllotService {
                             break;
                         }else{
                             allotSeats(preSaleRequest,section);
-                            break;
+
+                             break;
                         }
 
                     }
                 }
 
             }
+
+
             if(!preSaleRequest.isFlag()){
 
                 preSaleRequest.setMessage("Call to split party.");
@@ -59,6 +66,7 @@ public class AllotService {
 
         }
         printRequests();
+
     }
 
     /**
@@ -107,7 +115,7 @@ public class AllotService {
     private void printRequests() {
 
         System.out.println("Seats Distribution :\n");
-        for(PreSaleRequest preSaleRequest: requestList){
+            for(PreSaleRequest preSaleRequest: requestList){
             System.out.println(preSaleRequest.output());
         }
     }
@@ -118,6 +126,7 @@ public class AllotService {
      * @param section object
      */
     private void allotSeats(PreSaleRequest preSaleRequest, Section section) {
+
         int unoccupied = section.getUnoccupiedSeats();
 
         /**
@@ -136,6 +145,7 @@ public class AllotService {
         preSaleRequest.setFlag(true);
         preSaleRequest.setRowSelected(section.getRowNumber());
         preSaleRequest.setSectionSelected(section.getSectionNumber());
+
     }
 
 }
