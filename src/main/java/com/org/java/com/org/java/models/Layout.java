@@ -3,8 +3,6 @@ package com.org.java.com.org.java.models;
 import java.util.List;
 
 /**
- * Created by Bhargav on 1/22/2018.
- *
  * Pojo class for theatre layout
  */
 public class Layout {
@@ -17,10 +15,11 @@ public class Layout {
 
     /**
      * Getters and setters
-     *
      */
 
-    public int getTotalNumberOfSeats() { return totalNumberOfSeats; }
+    public int getTotalNumberOfSeats() {
+        return totalNumberOfSeats;
+    }
 
     public void setTotalNumberOfSeats(int totalNumberOfSeats) {
         this.totalNumberOfSeats = totalNumberOfSeats;

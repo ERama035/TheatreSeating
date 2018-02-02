@@ -1,8 +1,6 @@
 package com.org.java.com.org.java.models;
 
 /**
- * Created by Bhargav on 1/22/2018.
- *
  * Pojo class for pre sale requests
  */
 public class PreSaleRequest {
@@ -16,7 +14,6 @@ public class PreSaleRequest {
 
     /**
      * Getters and Setters
-     *
      */
     public String getMessage() {
         return message;
@@ -67,23 +64,22 @@ public class PreSaleRequest {
     }
 
     /**
-     *Prints the output
+     * Prints the output
+     *
      * @return The String output
      */
-    public String output(){
+    public String output() {
 
         String output = null;
 
-        if(message==null){
+        if (message == null) {
 
-            output = name+" "+"Row "+rowSelected+" "+"Section "+ sectionSelected;
+            output = name + " " + "Row " + rowSelected + " " + "Section " + sectionSelected;
 
+        } else {
+
+            output = name + " " + message;
         }
-        else{
-
-            output = name+" "+message;
-        }
-
 
 
         return output;

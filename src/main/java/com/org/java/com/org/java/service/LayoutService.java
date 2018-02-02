@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Bhargav on 1/23/2018.
- *
  * Service class for theatre layout
  */
 public class LayoutService {
@@ -17,7 +15,7 @@ public class LayoutService {
     public static Layout theatreLayout = new Layout();
 
     /**
-     *Method to store the theatre layout in list
+     * Method to store the theatre layout in list
      */
 
     public void getLayout(String tempLayout) throws LayoutServiceException {
@@ -32,21 +30,21 @@ public class LayoutService {
          */
         String[] rows = tempLayout.split(System.lineSeparator());
         String[] sections = null;
-        for(int i=0;i<rows.length;i++){
+        for (int i = 0; i < rows.length; i++) {
             /**
              *Spliting the rows into sections
              */
             sections = rows[i].split(" ");
-            for(int j=0;j<sections.length;j++){
-                try{
+            for (int j = 0; j < sections.length; j++) {
+                try {
                     count = Integer.valueOf(sections[j]);
 
-                }catch(NumberFormatException e){
+                } catch (NumberFormatException e) {
 
-                    throw new NumberFormatException(sections[j]+" is invalid section capacity");
+                    throw new NumberFormatException(sections[j] + " is invalid section capacity");
                 }
 
-                if((Integer.valueOf(sections[j]))<0){
+                if ((Integer.valueOf(sections[j])) < 0) {
 
                     throw new LayoutServiceException("Entered negative value for section");
                 }
@@ -56,13 +54,13 @@ public class LayoutService {
                  */
                 theatreCapacity = theatreCapacity + count;
 
-                sectionInRows=new Section();
+                sectionInRows = new Section();
 
                 /**
                  *Defining the current section values
                  */
-                sectionInRows.setRowNumber(i+1);
-                sectionInRows.setSectionNumber(j+1);
+                sectionInRows.setRowNumber(i + 1);
+                sectionInRows.setSectionNumber(j + 1);
                 sectionInRows.setNumberOfSeats(count);
                 sectionInRows.setUnoccupiedSeats(count);
 
@@ -80,8 +78,6 @@ public class LayoutService {
         theatreLayout.setTotalNumberOfSeats(theatreCapacity);
         theatreLayout.setAvailability(theatreCapacity);
         theatreLayout.setSections(sectionList);
-
-
 
 
     }

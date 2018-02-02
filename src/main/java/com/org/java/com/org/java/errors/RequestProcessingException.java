@@ -1,11 +1,11 @@
 package com.org.java.com.org.java.errors;
 
 /**
- * Created by Bhargav on 1/26/2018.
+ * Custom exception class for RequestProcessing.
  */
 public class RequestProcessingException extends Exception {
 
-    public RequestProcessingException(String message){
+    public RequestProcessingException(String message) {
 
         super(message);
     }

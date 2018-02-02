@@ -1,9 +1,9 @@
 package com.org.java.com.org.java.models;
 
 /**
- * Created by Bhargav on 1/22/2018.
+ * Pojo class for Section class
  */
-public class Section{
+public class Section {
 
     private int rowNumber;
     private int sectionNumber;
@@ -11,7 +11,7 @@ public class Section{
     private int unoccupiedSeats;
 
     /**
-     *Getters and Setters for Section class
+     * Getters and Setters for Section class
      */
 
     public int getRowNumber() {
@@ -46,6 +46,10 @@ public class Section{
         this.unoccupiedSeats = unoccupiedSeats;
     }
 
+    /**
+     * Override the toString method
+     * @return all the section variables
+     */
     @Override
     public String toString() {
         return "Section{" +
@@ -55,7 +59,6 @@ public class Section{
                 ", unoccupiedSeats=" + unoccupiedSeats +
                 '}';
     }
-
 
 
 }

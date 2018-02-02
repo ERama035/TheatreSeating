@@ -7,7 +7,7 @@ import com.org.java.com.org.java.service.RequestProcessing;
 import java.util.Scanner;
 
 /**
- * Created by Bhargav on 1/22/2018.
+ *Main class which takes the input from console and returns the output to the console
  */
 public class App {
 
@@ -23,23 +23,21 @@ public class App {
 
         String entry;
 
-        while((entry=inputs.nextLine())!=(null) &&(!entry.equals("end"))){
+        while ((entry = inputs.nextLine()) != (null) && (!entry.equals("end"))) {
 
-            if(entry.length() == 0){
+            if (entry.length() == 0) {
 
                 layoutComplete = true;
                 continue;
             }
 
-            if(!layoutComplete){
+            if (!layoutComplete) {
 
-                layoutEntry.append( entry + System.lineSeparator());
-            }
-
-            else{
+                layoutEntry.append(entry + System.lineSeparator());
+            } else {
 
 
-                preSaleRequests.append(entry+System.lineSeparator());
+                preSaleRequests.append(entry + System.lineSeparator());
             }
         }
 
@@ -48,20 +46,19 @@ public class App {
 
         LayoutService layoutService = new LayoutService();
         RequestProcessing processing = new RequestProcessing();
-        AllotService allotService=new AllotService();
+        AllotService allotService = new AllotService();
 
-        try{
+        try {
             layoutService.getLayout(layoutEntry.toString());
 
             processing.getPreSaleRequests(preSaleRequests.toString());
 
             allotService.allot();
 
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
 
             System.out.println(e.getMessage());
-        }
-        catch(Exception e){
+        } catch (Exception e) {
 
             e.printStackTrace();
         }
