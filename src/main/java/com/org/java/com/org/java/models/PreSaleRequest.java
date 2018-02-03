@@ -64,25 +64,25 @@ public class PreSaleRequest {
     }
 
     /**
-     * Prints the output
+     * Overridden toString method
      *
-     * @return The String output
+     * @return the name, row number and section selected
      */
-    public String output() {
+    @Override
+    public String toString() {
 
         String output = null;
 
         if (message == null) {
 
             output = name + " " + "Row " + rowSelected + " " + "Section " + sectionSelected;
-
         } else {
-
             output = name + " " + message;
-        }
 
+        }
 
         return output;
     }
+
 
 }

@@ -32,6 +32,7 @@ public class RequestProcessing {
              */
             String[] requestArray = requestEntry.split(" ");
             preSaleRequest = new PreSaleRequest();
+
             /**
              * Saving the person's name
              */
@@ -66,5 +67,6 @@ public class RequestProcessing {
         }
 
     }
+
 
 }

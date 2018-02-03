@@ -2,6 +2,7 @@ package com.org.java.com.org.java.service;
 
 import com.org.java.com.org.java.models.PreSaleRequest;
 import com.org.java.com.org.java.models.Section;
+import com.org.java.com.org.java.views.TheatreSeatingView;
 
 import static com.org.java.com.org.java.service.LayoutService.theatreLayout;
 import static com.org.java.com.org.java.service.RequestProcessing.requestList;
@@ -26,11 +27,15 @@ public class AllotService {
                 preSaleRequest.setMessage("Sorry, we can't handle your party");
                 preSaleRequest.setFlag(true);
             }
+            /**
+             * Alloting seats if the requested seats is equal to the number of seats available in a section
+             */
             for (int i = 0; i < theatreLayout.getSections().size(); i++) {
                 Section section = theatreLayout.getSections().get(i);
                 if (section.getUnoccupiedSeats() == preSaleRequest.getTickets()) {
                     allotSeats(preSaleRequest, section);
                     break;
+
 
                 } else if (section.getUnoccupiedSeats() > preSaleRequest.getTickets()) {
                     int requestNo = findComplementRequest(section.getUnoccupiedSeats() - preSaleRequest.getTickets(), i);
@@ -38,11 +43,13 @@ public class AllotService {
                         allotSeats(preSaleRequest, section);
                         allotSeats(requestList.get(requestNo), section);
                         break;
+
                     } else {
                         int sectionNo = findSection(preSaleRequest.getTickets());
                         if (sectionNo >= 0) {
                             allotSeats(preSaleRequest, theatreLayout.getSections().get(sectionNo));
                             break;
+
                         } else {
                             allotSeats(preSaleRequest, section);
 
@@ -63,7 +70,8 @@ public class AllotService {
             }
 
         }
-        printRequests();
+        TheatreSeatingView theatreSeatingView = new TheatreSeatingView();
+        theatreSeatingView.printRequests();
 
     }
 
@@ -109,16 +117,6 @@ public class AllotService {
         return requestNo;
     }
 
-    /**
-     * Method for printing the output
-     */
-    private void printRequests() {
-
-        System.out.println("Seats Distribution :\n");
-        for (PreSaleRequest preSaleRequest : requestList) {
-            System.out.println(preSaleRequest.output());
-        }
-    }
 
     /**
      * Method for allot seats for a request to a specific section

@@ -46,19 +46,4 @@ public class Section {
         this.unoccupiedSeats = unoccupiedSeats;
     }
 
-    /**
-     * Override the toString method
-     * @return all the section variables
-     */
-    @Override
-    public String toString() {
-        return "Section{" +
-                "rowNumber=" + rowNumber +
-                ", sectionNumber=" + sectionNumber +
-                ", numberOfSeats=" + numberOfSeats +
-                ", unoccupiedSeats=" + unoccupiedSeats +
-                '}';
-    }
-
-
 }
