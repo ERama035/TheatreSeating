@@ -1,17 +1,18 @@
-package com.org.java;
+package com.bhargav.theatre.controllers;
 
-import com.org.java.com.org.java.service.AllotService;
-import com.org.java.com.org.java.service.LayoutService;
-import com.org.java.com.org.java.service.RequestProcessing;
+import com.bhargav.theatre.service.*;
 
 import java.util.Scanner;
 
 /**
- *Main class which takes the input from console and returns the output to the console
+ * Controller class
  */
-public class App {
+public class TheatreSeatingController {
 
-    public static void main(String[] args) {
+    /**
+     * Method which takes input from console
+     */
+    public void theatreSeatingController() {
 
         boolean layoutComplete = false;
         StringBuilder layoutEntry = new StringBuilder();
@@ -44,16 +45,16 @@ public class App {
 
         inputs.close();
 
-        LayoutService layoutService = new LayoutService();
-        RequestProcessing processing = new RequestProcessing();
-        AllotService allotService = new AllotService();
+        LayoutServiceImpl layoutServiceImpl = new LayoutServiceImpl();
+        TicketRequestProcessingService processing = new TicketRequestProcessingServiceImpl();
+        TicketAllotService ticketAllotService = new TicketAllotServiceImpl();
 
         try {
-            layoutService.getLayout(layoutEntry.toString());
+            layoutServiceImpl.createLayout(layoutEntry.toString());
 
-            processing.getPreSaleRequests(preSaleRequests.toString());
+            processing.setPreSaleRequests(preSaleRequests.toString());
 
-            allotService.allot();
+            ticketAllotService.allot();
 
         } catch (NumberFormatException e) {
 
@@ -64,9 +65,6 @@ public class App {
         }
     }
 
+
 }
-
-
-
-
 

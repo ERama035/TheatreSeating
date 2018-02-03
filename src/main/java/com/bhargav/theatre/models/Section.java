@@ -1,4 +1,4 @@
-package com.org.java.com.org.java.models;
+package com.bhargav.theatre.models;
 
 /**
  * Pojo class for Section class
@@ -45,20 +45,5 @@ public class Section {
     public void setUnoccupiedSeats(int unoccupiedSeats) {
         this.unoccupiedSeats = unoccupiedSeats;
     }
-
-    /**
-     * Override the toString method
-     * @return all the section variables
-     */
-    @Override
-    public String toString() {
-        return "Section{" +
-                "rowNumber=" + rowNumber +
-                ", sectionNumber=" + sectionNumber +
-                ", numberOfSeats=" + numberOfSeats +
-                ", unoccupiedSeats=" + unoccupiedSeats +
-                '}';
-    }
-
 
 }

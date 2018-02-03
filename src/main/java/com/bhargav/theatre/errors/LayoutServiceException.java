@@ -1,7 +1,7 @@
-package com.org.java.com.org.java.errors;
+package com.bhargav.theatre.errors;
 
 /**
- * Custom exception class for LayoutService.
+ * Custom exception class for LayoutServiceImpl.
  */
 public class LayoutServiceException extends Exception {
 

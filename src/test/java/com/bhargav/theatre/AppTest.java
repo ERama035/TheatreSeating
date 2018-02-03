@@ -1,4 +1,4 @@
-package com.org.java;
+package com.bhargav.theatre;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

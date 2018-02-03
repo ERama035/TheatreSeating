@@ -13,8 +13,9 @@ The theater layout is made up of 1 or more rows.  Each row is made up of 1 or mo
 
 After the theater layout, there is one empty line, followed by 1 or more theater requests.  The theater request is made up of a name followed by a space and the number of requested tickets.
 
+
+**Sample input:**
 ```
-Sample input:
 6 6
 3 5 5 3
 4 6 6 4
