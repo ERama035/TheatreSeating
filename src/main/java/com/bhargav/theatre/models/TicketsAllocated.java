@@ -1,9 +1,9 @@
-package com.org.java.com.org.java.models;
+package com.bhargav.theatre.models;
 
 /**
  * Pojo class for pre sale requests
  */
-public class PreSaleRequest {
+public class TicketsAllocated {
 
     private String name;
     private int sectionSelected;

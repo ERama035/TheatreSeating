@@ -1,8 +1,8 @@
-package com.org.java.com.org.java.service;
+package com.bhargav.theatre.service;
 
-import com.org.java.com.org.java.errors.LayoutServiceException;
-import com.org.java.com.org.java.models.Layout;
-import com.org.java.com.org.java.models.Section;
+import com.bhargav.theatre.errors.LayoutServiceException;
+import com.bhargav.theatre.models.Section;
+import com.bhargav.theatre.dao.TheaterDAO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +10,16 @@ import java.util.List;
 /**
  * Service class for theatre layout
  */
-public class LayoutService {
+public class LayoutServiceImpl implements LayoutService {
 
-    public static Layout theatreLayout = new Layout();
+    public TheaterDAO theatreTheaterDAO = new TheaterDAO();
 
     /**
      * Method to store the theatre layout in list
      */
 
-    public void getLayout(String tempLayout) throws LayoutServiceException {
+    @Override
+    public void createLayout(String tempLayout) throws LayoutServiceException {
 
         Section sectionInRows = null;
         List<Section> sectionList = new ArrayList<Section>();
@@ -75,9 +76,7 @@ public class LayoutService {
         /**
          *Defining the Theatre layout values
          */
-        theatreLayout.setTotalNumberOfSeats(theatreCapacity);
-        theatreLayout.setAvailability(theatreCapacity);
-        theatreLayout.setSections(sectionList);
+        theatreTheaterDAO.setSections(sectionList);
 
 
     }

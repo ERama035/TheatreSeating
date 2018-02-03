@@ -1,7 +1,7 @@
-package com.org.java.com.org.java.errors;
+package com.bhargav.theatre.errors;
 
 /**
- * Custom exception class for RequestProcessing.
+ * Custom exception class for TicketRequestProcessingServiceImpl.
  */
 public class RequestProcessingException extends Exception {
 

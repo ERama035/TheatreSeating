@@ -1,15 +1,13 @@
-package com.org.java.com.org.java.controllers;
+package com.bhargav.theatre.controllers;
 
-import com.org.java.com.org.java.service.AllotService;
-import com.org.java.com.org.java.service.LayoutService;
-import com.org.java.com.org.java.service.RequestProcessing;
+import com.bhargav.theatre.service.*;
 
 import java.util.Scanner;
 
 /**
  * Controller class
  */
-public class ModelViewController {
+public class TheatreSeatingController {
 
     /**
      * Method which takes input from console
@@ -47,16 +45,16 @@ public class ModelViewController {
 
         inputs.close();
 
-        LayoutService layoutService = new LayoutService();
-        RequestProcessing processing = new RequestProcessing();
-        AllotService allotService = new AllotService();
+        LayoutServiceImpl layoutServiceImpl = new LayoutServiceImpl();
+        TicketRequestProcessingService processing = new TicketRequestProcessingServiceImpl();
+        TicketAllotService ticketAllotService = new TicketAllotServiceImpl();
 
         try {
-            layoutService.getLayout(layoutEntry.toString());
+            layoutServiceImpl.createLayout(layoutEntry.toString());
 
-            processing.getPreSaleRequests(preSaleRequests.toString());
+            processing.setPreSaleRequests(preSaleRequests.toString());
 
-            allotService.allot();
+            ticketAllotService.allot();
 
         } catch (NumberFormatException e) {
 

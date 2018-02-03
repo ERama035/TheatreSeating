@@ -1,4 +1,4 @@
-package com.org.java.com.org.java.models;
+package com.bhargav.theatre.models;
 
 /**
  * Pojo class for Section class
