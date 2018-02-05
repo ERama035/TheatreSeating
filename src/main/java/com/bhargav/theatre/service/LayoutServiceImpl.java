@@ -79,6 +79,7 @@ public class LayoutServiceImpl implements LayoutService {
         theatreTheaterDAO.setSections(sectionList);
 
 
+
     }
 
 

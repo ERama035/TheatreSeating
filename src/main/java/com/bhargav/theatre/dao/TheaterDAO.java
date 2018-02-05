@@ -5,7 +5,7 @@ import com.bhargav.theatre.models.Section;
 import java.util.List;
 
 /**
- * Pojo class for theatre layout
+ * DAO for theatre layout
  */
 public class TheaterDAO {
 
@@ -23,7 +23,7 @@ public class TheaterDAO {
 
         int totalSeats = 0;
         for ( Section section : sections) {
-            totalSeats+= section.getNumberOfSeats();
+            totalSeats += section.getNumberOfSeats();
         }
 
         return totalSeats;
@@ -33,7 +33,7 @@ public class TheaterDAO {
 
         int totalSeats = 0;
         for ( Section section : sections) {
-            totalSeats+= section.getUnoccupiedSeats();
+            totalSeats += section.getUnoccupiedSeats();
         }
 
         return totalSeats;

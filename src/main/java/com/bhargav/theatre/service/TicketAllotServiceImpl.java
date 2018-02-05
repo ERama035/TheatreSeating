@@ -134,10 +134,18 @@ public class TicketAllotServiceImpl implements TicketAllotService {
 
         int unoccupied = section.getUnoccupiedSeats();
 
+        unoccupied -= ticketsAllocated.getTickets();
+
+//        int totalSeats = theaterDAO.getAvailability();
+//
+//        totalSeats -= ticketsAllocated.getTickets();
+
         section.setUnoccupiedSeats(unoccupied);
         ticketsAllocated.setFlag(true);
         ticketsAllocated.setRowSelected(section.getRowNumber());
         ticketsAllocated.setSectionSelected(section.getSectionNumber());
+
+
 
     }
 

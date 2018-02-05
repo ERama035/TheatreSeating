@@ -3,8 +3,9 @@ package com.bhargav.theatre.service;
 import com.bhargav.theatre.errors.RequestProcessingException;
 
 /**
- * Created by Bhargav on 2/3/2018.
+ * Service Used to set the presale requests received
  */
 public interface TicketRequestProcessingService {
+
     void setPreSaleRequests(String requests) throws RequestProcessingException;
 }
